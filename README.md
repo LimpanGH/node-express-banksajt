@@ -48,10 +48,11 @@ Här kan man se sitt saldo och sätta in pengar på kontot. För att göra detta
 1. Öppna en terminal och gå med `cd` där du vill skapa projektet.
 2. Skapa där en folder: bank och gå med `cd` in i foldern.
 
-### Skapa frontend
+### Frontend i React och React Router
 
 1. Gå in i projektet: `cd frontend`.
-2. Gå in i projektet: `cd frontend`.
+2. Inspektera nuvarande routes
+
 
 ### Skapa backend
 
