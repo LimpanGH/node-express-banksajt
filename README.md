@@ -1,4 +1,4 @@
-# Skapa en Banksajt med Node.js och Express
+# Skapa backend i Node.js och Express för Banksajt 
 
 I dagens uppgift ska vi öva på att skapa en banksajt med backend i nodejs och express
 
