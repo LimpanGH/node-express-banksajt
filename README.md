@@ -51,7 +51,7 @@ Här kan man se sitt saldo och sätta in pengar på kontot. För att göra detta
 
 ### Skapa backend
 
-1. Skapa en folder: backend och gå med `cd` in i foldern.
+1. Skapa en folder i roten: backend och gå med `cd` in i foldern.
 1. Skriv `npm init` och tryck Enter på alla frågor.
 1. Lägg till `"type": "module"`i package.json
 1. I scripts i package.json lägg till: `"start": "nodemon server.js"`
@@ -106,20 +106,25 @@ app.listen(port, () => {
 ### Exempel på fetch för POST i frontend
 
 ```
-fetch('http://localhost:3001/users', {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-        username: 'Användarnamn',
-        password: 'Lösenord',
-    }),
-})
-.then(response => response.json())
-.then(data => console.log(data))
-.catch((error) => {
-    console.error('Error:', error);
-});
+    try {
+            const response = await fetch('http://localhost:3000/users', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    username: username,
+                    password: password,
+                }),
+            });
+            if(response.ok) {
+                const data = await response.json();
+                alert(`User ${data.user.username} created and account with balance ${data.account.balance} created`);
+            } else {
+                throw new Error('Fel användarnamn eller lösenord');
+            }
+        } catch (error) {
+            console.error('Error:', error)
+        }
 
 ```
