@@ -1,6 +1,6 @@
 # Skapa en Banksajt med Node.js och Express
 
-I dagens uppgift ska vi öva på att skapa en react-sajt med backend i nodejs och express
+I dagens uppgift ska vi öva på att skapa en banksajt med backend i nodejs och express
 
 ### Data i backend
 
@@ -32,7 +32,7 @@ När en användare loggar in skapas ett engångslösenord. Engångslösenordet o
 Banken har följande sidor på sin sajt:
 
 **Landningssida**
-Ska innehålla navigering med länkar till Hem, logga in och skapa användare och en hero-section med knapp till skapa användare
+Ska innehålla navigering med länkar till Hem, logga in och skapa användare och en knapp till skapa användare
 
 **Skapa användare**
 Ett fält för användarnamn och ett för lösenord. Datat ska sparas i arrayen users i backend och ett bankkonto skapas i backend med 0 kr som saldo.
@@ -45,18 +45,12 @@ Här kan man se sitt saldo och sätta in pengar på kontot. För att göra detta
 
 ## Hur du klarar uppgiften
 
-1. Öppna en terminal och gå med `cd` där du vill skapa projektet.
-2. Skapa där en folder: bank och gå med `cd` in i foldern.
-
-### Frontend i React och React Router
-
-1. Gå in i projektet: `cd frontend`.
-2. Inspektera nuvarande routes
+1. Klona detta repo
+2. Kolla in frontend-mappen som innehåller komplett kod till uppgiften gjord i React och React Router. Du är fri att ändra om du vill ha annan layout / struktur.
 
 
 ### Skapa backend
 
-1. Backa en nivå med `cd ..`.
 1. Skapa en folder: backend och gå med `cd` in i foldern.
 1. Skriv `npm init` och tryck Enter på alla frågor.
 1. Lägg till `"type": "module"`i package.json
