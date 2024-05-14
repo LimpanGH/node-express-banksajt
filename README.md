@@ -71,6 +71,10 @@ Här kan man se sitt saldo och sätta in pengar på kontot. För att göra detta
 3. När man loggar in ska ett engångslösenord skapas och skickas tillbaka i response.
 4. När man hämtar saldot ska samma engångslösenord skickas med i Post.
 
+### Mer detaljerad skiss om hur det ska fungera
+
+[Se anteckning på Excalidraw](https://link.excalidraw.com/l/9THk15pMa6N/8g7rTYViPgB)
+
 ### Startkod för server.js i backend
 
 ```
