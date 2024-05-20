@@ -1,6 +1,24 @@
-# Skapa backend i Node.js och Express för Banksajt 
+# Skapa backend i Node.js och Express för Banksajt
 
-I dagens uppgift ska vi öva på att skapa en banksajt med backend i nodejs och express
+## Köra applikationen:
+
+1. CDa till mappen Frontend och kör:
+   ```
+   npm run dev
+   ```
+2. CDa till mappen Backend och kör:
+   ```
+   npm start
+   ```
+3. Gå till browsern och skapa en user, logga in usern, gör en deposit.
+4. Testa även med Thunder Client genom att putta in olika object i body, tex denna, till localhost:3000/users:
+   ```{
+   "username": "Linus",
+   "password": "tjosan"
+   }
+   ```
+
+## I dagens uppgift ska vi öva på att skapa en banksajt med backend i nodejs och express
 
 ### Data i backend
 
@@ -10,21 +28,27 @@ I bankens backend finns tre arrayer: En array `users` för användare, en array 
 Varje användare har ett id, ett användarnamn och ett lösenord.
 
 ```
+
 [{id: 101, username: "Joe", password: "hemligt" }, ...]
+
 ```
 
 **Accounts**
 Varje bankkonto har ett id, ett användarid och ett saldo.
 
 ```
+
 [{id: 1, userId: 101, amount: 200 }, ...]
+
 ```
 
 **Sessions**
 När en användare loggar in skapas ett engångslösenord. Engångslösenordet och användarid läggs i sessions arrayen.
 
 ```
+
 [{userId: 101, token: "nwuefweufh" }, ...]
+
 ```
 
 ### Sidor på sajten
@@ -47,7 +71,6 @@ Här kan man se sitt saldo och sätta in pengar på kontot. För att göra detta
 
 1. Klona detta repo
 2. Kolla in frontend-mappen som innehåller komplett kod till uppgiften gjord i React och React Router. Du är fri att ändra om du vill ha annan layout / struktur.
-
 
 ### Skapa backend
 
@@ -78,6 +101,7 @@ Här kan man se sitt saldo och sätta in pengar på kontot. För att göra detta
 ### Startkod för server.js i backend
 
 ```
+
 import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
@@ -90,19 +114,18 @@ app.use(bodyParser.json());
 
 // Generera engångslösenord
 function generateOTP() {
-    // Generera en sexsiffrig numerisk OTP
-    const otp = Math.floor(100000 + Math.random() * 900000);
-    return otp.toString();
+// Generera en sexsiffrig numerisk OTP
+const otp = Math.floor(100000 + Math.random() \* 900000);
+return otp.toString();
 }
 
 // Din kod här. Skriv dina arrayer
-
 
 // Din kod här. Skriv dina routes:
 
 // Starta servern
 app.listen(port, () => {
-    console.log(`Bankens backend körs på http://localhost:${port}`);
+console.log(`Bankens backend körs på http://localhost:${port}`);
 });
 
 ```
@@ -110,6 +133,7 @@ app.listen(port, () => {
 ### Exempel på fetch för POST i frontend
 
 ```
+
     try {
             const response = await fetch('http://localhost:3000/users', {
                 method: 'POST',
@@ -130,5 +154,9 @@ app.listen(port, () => {
         } catch (error) {
             console.error('Error:', error)
         }
+
+```
+
+```
 
 ```

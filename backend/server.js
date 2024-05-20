@@ -90,6 +90,7 @@ app.post('/me/account', (req, res) => {
   } else {
     res.status(401).send('Invalid session token');
   }
+  logCurrentData();
 });
 
 
@@ -133,7 +134,8 @@ app.post('/me/account/transactions', (req, res) => {
     userAccount.balance -= amount;
   }
 
-  res.status(200).send('Transaction successful');
+  // res.status(200).send('Transaction successful');
+  res.status(200).send({ message: 'Transaction successful', balance: userAccount.balance });
 });
 
 

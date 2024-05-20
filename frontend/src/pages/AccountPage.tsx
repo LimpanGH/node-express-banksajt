@@ -49,13 +49,19 @@ function AccountPage() {
           Authorization: `Bearer ${sessionToken}`,
         },
         body: JSON.stringify({
+          type: 'deposit',
           amount: depositAmount,
         }),
       });
       if (response.ok) {
         const data = await response.json();
-        alert(`Du har nu ${data.message} kronor på ditt konto`);
-        fetchAccountBalance();
+        
+        // alert(`Du har nu ${data.message} kronor på ditt konto`);
+        // fetchAccountBalance();
+
+        alert(`Insättning lyckades, du har nu ${data.balance} Kr på ditt konto`);
+        setBalance(data.balance); // Uppdatera balansen direkt med den nya balansen från servern
+      
       } else {
         console.error('Error:', response);
       }
